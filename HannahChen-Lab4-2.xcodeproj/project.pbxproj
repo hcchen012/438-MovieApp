@@ -13,6 +13,14 @@
 		BB97E01F290EB29B0014A738 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB97E01D290EB29B0014A738 /* Main.storyboard */; };
 		BB97E021290EB29D0014A738 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB97E020290EB29D0014A738 /* Assets.xcassets */; };
 		BB97E024290EB29D0014A738 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB97E022290EB29D0014A738 /* LaunchScreen.storyboard */; };
+		BB97E02C290EB39F0014A738 /* no-image-found.png in Resources */ = {isa = PBXBuildFile; fileRef = BB97E02B290EB39E0014A738 /* no-image-found.png */; };
+		BB97E02E290EB4C40014A738 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E02D290EB4C40014A738 /* MovieCollectionViewCell.swift */; };
+		BB97E030290EB8FA0014A738 /* APIResults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E02F290EB8FA0014A738 /* APIResults.swift */; };
+		BB97E032290EB93E0014A738 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E031290EB93E0014A738 /* Movie.swift */; };
+		BB97E035290ECC930014A738 /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E034290ECC920014A738 /* DetailedViewController.swift */; };
+		BB97E039290EEB260014A738 /* movie.png in Resources */ = {isa = PBXBuildFile; fileRef = BB97E038290EEB260014A738 /* movie.png */; };
+		BB97E03B290EEBF30014A738 /* movie2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = BB97E03A290EEBF30014A738 /* movie2.jpeg */; };
+		BB97E041290F4BBD0014A738 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB97E040290F4BBD0014A738 /* FavoritesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +32,15 @@
 		BB97E020290EB29D0014A738 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB97E023290EB29D0014A738 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB97E025290EB29D0014A738 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB97E02B290EB39E0014A738 /* no-image-found.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no-image-found.png"; sourceTree = "<group>"; };
+		BB97E02D290EB4C40014A738 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB97E02F290EB8FA0014A738 /* APIResults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResults.swift; sourceTree = "<group>"; };
+		BB97E031290EB93E0014A738 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		BB97E033290EC5AF0014A738 /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		BB97E034290ECC920014A738 /* DetailedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		BB97E038290EEB260014A738 /* movie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = movie.png; path = ../../../../../../../Downloads/movie.png; sourceTree = "<group>"; };
+		BB97E03A290EEBF30014A738 /* movie2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = movie2.jpeg; sourceTree = "<group>"; };
+		BB97E040290F4BBD0014A738 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +76,19 @@
 				BB97E017290EB29B0014A738 /* AppDelegate.swift */,
 				BB97E019290EB29B0014A738 /* SceneDelegate.swift */,
 				BB97E01B290EB29B0014A738 /* ViewController.swift */,
+				BB97E034290ECC920014A738 /* DetailedViewController.swift */,
+				BB97E040290F4BBD0014A738 /* FavoritesViewController.swift */,
 				BB97E01D290EB29B0014A738 /* Main.storyboard */,
+				BB97E02F290EB8FA0014A738 /* APIResults.swift */,
+				BB97E031290EB93E0014A738 /* Movie.swift */,
+				BB97E02D290EB4C40014A738 /* MovieCollectionViewCell.swift */,
 				BB97E020290EB29D0014A738 /* Assets.xcassets */,
 				BB97E022290EB29D0014A738 /* LaunchScreen.storyboard */,
 				BB97E025290EB29D0014A738 /* Info.plist */,
+				BB97E033290EC5AF0014A738 /* Readme.md */,
+				BB97E02B290EB39E0014A738 /* no-image-found.png */,
+				BB97E038290EEB260014A738 /* movie.png */,
+				BB97E03A290EEBF30014A738 /* movie2.jpeg */,
 			);
 			path = "HannahChen-Lab4-2";
 			sourceTree = "<group>";
@@ -126,8 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB97E024290EB29D0014A738 /* LaunchScreen.storyboard in Resources */,
+				BB97E039290EEB260014A738 /* movie.png in Resources */,
 				BB97E021290EB29D0014A738 /* Assets.xcassets in Resources */,
+				BB97E03B290EEBF30014A738 /* movie2.jpeg in Resources */,
 				BB97E01F290EB29B0014A738 /* Main.storyboard in Resources */,
+				BB97E02C290EB39F0014A738 /* no-image-found.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,9 +167,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB97E035290ECC930014A738 /* DetailedViewController.swift in Sources */,
 				BB97E01C290EB29B0014A738 /* ViewController.swift in Sources */,
+				BB97E041290F4BBD0014A738 /* FavoritesViewController.swift in Sources */,
 				BB97E018290EB29B0014A738 /* AppDelegate.swift in Sources */,
+				BB97E032290EB93E0014A738 /* Movie.swift in Sources */,
 				BB97E01A290EB29B0014A738 /* SceneDelegate.swift in Sources */,
+				BB97E02E290EB4C40014A738 /* MovieCollectionViewCell.swift in Sources */,
+				BB97E030290EB8FA0014A738 /* APIResults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
