@@ -73,10 +73,6 @@ class DetailedViewController: UIViewController {
         let buttonFrame = CGRect(x: view.frame.midX - view.frame.width/4, y: currPos, width: view.frame.width/2, height: 30)
         button.frame = buttonFrame
         button.setTitle("Add to Favorites", for: .normal)
-//        button.setTitleColor(UIColor.white, for: .normal)
-//        button.backgroundColor = UIColor.blue
-//        button.layer.cornerRadius = 20
-//        button.clipsToBounds = true
         button.addTarget(self, action: #selector(addToFavorites), for: UIControl.Event.touchUpInside)
         view.addSubview(button)
         

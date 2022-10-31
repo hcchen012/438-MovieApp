@@ -112,18 +112,6 @@ class FavoritesViewController: UIViewController, UITableViewDataSource, UITableV
         favoriteMovies = userDefaults.stringArray(forKey: "favoriteMovies") ?? []
         self.tableView.reloadData()
         
-//        DispatchQueue.global().async {
-//
-//            self.fetchDataForCollectionView(query: searchText)
-//
-//            DispatchQueue.main.async {
-//
-////                self.theSpinner.stopAnimating()
-////                self.theSpinner.isHidden = true
-//                self.collectionView.reloadData()
-//            }
-//        }
-        
     }
 
     /*

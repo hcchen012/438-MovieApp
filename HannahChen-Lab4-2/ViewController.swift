@@ -5,7 +5,7 @@
 //  Created by Hannah Chen on 10/12/22.
 //
 
-//Reference for UICollectionView: https://www.kodeco.com/18895088-uicollectionview-tutorial-getting-started#toc-anchor-013
+//Reference for UICollectionView: https://www.kodeco.com/18895088-uicollectionview-tutorial-getting-started#toc-anchor-013, https://www.kodeco.com/4829472-uicollectionview-custom-layout-tutorial-pinterest, https://www.youtube.com/watch?v=nPf5X5z0eA4&t=958s
 //Reference for SearchBar: https://guides.codepath.com/ios/Search-Bar-Guide
 //Reference for ActivityIndicatorView: https://stackoverflow.com/questions/56613143/i-am-trying-to-get-an-uiactivityindicatorview-to-show-when-i-am-loading-a-uitabl
 //Icon images from: "https://www.freeiconspng.com/img/"
@@ -39,7 +39,6 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         layout.minimumLineSpacing = 5
         collectionView.collectionViewLayout = layout
         
-        searchBar.delegate = self
         loadingCircle.isHidden = true
         setupCollectionView()
     }
@@ -63,7 +62,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     //push ViewController on click
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        print("in push")
+//        print("in push")
         let detailedVC = DetailedViewController()
         detailedVC.movieTitle = movieData[indexPath.row].title
         detailedVC.releaseDate = movieData[indexPath.row].release_date
@@ -96,6 +95,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     func setupCollectionView(){
         collectionView.dataSource = self
         collectionView.delegate = self
+        searchBar.delegate = self
         
         movieData.removeAll()
         theImageCache.removeAll()
@@ -104,6 +104,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         loadingCircle.startAnimating()
         DispatchQueue.global().async {
             
+            //fetch popular movies by default
             self.fetchDataForCollectionView(query: "")
             
             DispatchQueue.main.async {
@@ -126,7 +127,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             let data = try! Data(contentsOf: url)
             if data.count > 0{
                 movieData = try! JSONDecoder().decode(APIResults.self, from: data).results
-                print("the data is \(movieData)")
+//                print("the data is \(movieData)")
                 if movieData.count != 0{
                     cacheImages()
                 }
@@ -141,7 +142,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
             let data = try! Data(contentsOf: url)
             if data.count > 0{
                 movieData = try! JSONDecoder().decode(APIResults.self, from: data).results
-                print("the data is \(movieData)")
+//                print("the data is \(movieData)")
                 if movieData.count != 0{
                     cacheImages()
                 }
@@ -181,14 +182,14 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
                 theImageCache.append(image!)
             }
         }
-        print("\(theImageCache)")
+//        print("\(theImageCache)")
     }
     
     
     // Search
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         let searchText = searchBar.text!
-        print(searchText)
+//        print(searchText)
         searchBar.resignFirstResponder()
         
         movieData.removeAll()
