@@ -92,7 +92,7 @@ class DetailedViewController: UIViewController {
         else{
             //add to favorites in UserDefaults
             favoriteArray.append(movieTitle)
-            UserDefaults.standard.set(favoriteArray, forKey: "favoriteMovies")
+            userDefaults.set(favoriteArray, forKey: "favoriteMovies")
         }
     }
     

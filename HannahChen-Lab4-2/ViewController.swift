@@ -8,6 +8,7 @@
 //Reference for UICollectionView: https://www.kodeco.com/18895088-uicollectionview-tutorial-getting-started#toc-anchor-013, https://www.kodeco.com/4829472-uicollectionview-custom-layout-tutorial-pinterest, https://www.youtube.com/watch?v=nPf5X5z0eA4&t=958s
 //Reference for SearchBar: https://guides.codepath.com/ios/Search-Bar-Guide
 //Reference for ActivityIndicatorView: https://stackoverflow.com/questions/56613143/i-am-trying-to-get-an-uiactivityindicatorview-to-show-when-i-am-loading-a-uitabl
+//Reference for ContextMenu: https://www.youtube.com/watch?v=a1Agazw2JxM
 //Icon images from: "https://www.freeiconspng.com/img/"
 
 
@@ -23,7 +24,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     var movieData:[Movie] = []
     var theImageCache:[UIImage] = []
     var noResults = false
-    
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +89,43 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         navigationController?.pushViewController(detailedVC, animated: true)
         
+    }
+    
+    //3D touch context menu
+    func collectionView(_ collectionView: UICollectionView, contextMenuConfigurationForItemAt indexPath: IndexPath, point: CGPoint) -> UIContextMenuConfiguration? {
+        
+        var favoriteArray: [String] = self.userDefaults.stringArray(forKey: "favoriteMovies") ?? []
+        
+        let config = UIContextMenuConfiguration(identifier: nil, previewProvider: nil, actionProvider: { [weak self]_ in
+            
+            let favorite = UIAction(title: favoriteArray.contains(self!.movieData[indexPath.row].title) == true ? "Remove from Favorites" : "Add to Favorites",
+                                image: UIImage(named: "favorite.png"),
+                                identifier: nil,
+                                discoverabilityTitle: nil,
+                                state: .off
+            ){ [weak self]_ in
+                if favoriteArray.contains(self!.movieData[indexPath.row].title) == true{
+                    //Remove from favorites
+                    let index = favoriteArray.firstIndex(of: self!.movieData[indexPath.row].title)
+                    favoriteArray.remove(at: index!)
+                    self!.userDefaults.set(favoriteArray, forKey: "favoriteMovies")
+                }
+                else{
+                    //Add to favorites
+                    favoriteArray.append(self!.movieData[indexPath.row].title)
+                    self!.userDefaults.set(favoriteArray, forKey: "favoriteMovies")
+                }
+            }
+            
+            return UIMenu(title: "",
+                          subtitle: nil,
+                          image: nil,
+                          identifier: nil,
+                          options: UIMenu.Options.displayInline,
+                          children: [favorite])
+        })
+        
+        return config
     }
     
     

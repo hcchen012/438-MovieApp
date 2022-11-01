@@ -27,6 +27,10 @@
     - This required creating an alert but making sure to place it correctly when using DispatchQueue asynch calls. The status of whether a search returns any viable results or not is stored in a global variable. Then once the asynch calls return to main, if no results are found, the UI can then display an alert asking the user to try again.
     - This functionality allows the user to know whether a search has terminated and simply has no results or if the call is still fetching. Without this, a user might be unsure of how long to wait for a result to populate the CollectionView. 
 
+# Extra Credit
+
+- Created a context menu for the movies in the Movie tab. A 3D touch brings up the option to either add the movie to your favorites if the movie is not already added or remove the movie from your favorites if the movie has been added previously. The favorites tab will update as you click from this menu so that when you switch to your favorites, any/all movies you added/removed will be updated when the tab displays.
+- 
 
 #  Design Choices
 
